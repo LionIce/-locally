@@ -1,0 +1,22 @@
+<!--pages/index/index.wxml-->
+<swiper class='slides'>
+  <swiper-item  wx:for="{{slides}}" wx:key="id">
+    <navigator wx:if="{{item.link}}" url='{{item.link}}'>
+      <image src='{{item.image}}' mode='aspectFill'></image>
+    </navigator>
+     <image wx:else src='{{item.image}}' mode='aspectFill'></image>
+  </swiper-item>
+</swiper>
+
+<!-- 9宫格 -->
+<view class='grids'>
+  <navigator class='item' url='/pages/list/list?cat={{item.id}}' wx:for="{{categories}}" wx:key="id">
+    <image src='{{item.icon}}'></image>
+    <text>{{item.name}}</text>
+  </navigator>
+</view>
+<!-- 推荐*交友 -->
+<view class='links'>
+  <image src='/assets/images/link-01.png' mode='aspectFit'></image>
+  <image src='/assets/images/link-02.png' mode='aspectFit'></image>
+</view>
